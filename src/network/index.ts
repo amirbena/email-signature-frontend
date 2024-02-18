@@ -46,7 +46,7 @@ export const getTemplate = async (templateId: Types.ObjectId): Promise<TemplateD
 
 
 export const getAllTemplatesByUser = async (): Promise<TemplateDocument[]> => {
-    const result = await networkProxy.get(`${Routes.Templates}${TemplateRoutes.ALL}`, { headers: { Authorization: `Bearer ${getCookieByName(AuthorizationCookie)}` } });
+    const result = await networkProxy.get(`${Routes.Templates}`, { headers: { Authorization: `Bearer ${getCookieByName(AuthorizationCookie)}` } });
     return result.data;
 }
 

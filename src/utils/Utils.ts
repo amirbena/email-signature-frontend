@@ -22,3 +22,8 @@ export const isImageUrl = (value: string): boolean => {
     const imageRegex = /\.(jpeg|jpg|gif|png)$/i;
     return imageRegex.test(value);
 };
+
+export const isHTML = (str: string): boolean => {
+    const pattern = /<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/;
+    return pattern.test(str);
+};
